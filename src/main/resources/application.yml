@@ -1,0 +1,19 @@
+localvm:
+  ip: 192.168.239.128
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${localvm.ip}:5432/dockerpg
+    username: postgres
+
+  liquibase:
+    change-log: classpath:liquibase/changelog.xml
+
+  #evade org.postgresql.jdbc.PgConnection.createClob() is not yet implemented
+  #(see https://github.com/spring-projects/spring-boot/issues/12007)
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
