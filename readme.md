@@ -1,6 +1,6 @@
-#Docker playground
+# Docker playground
 
-####Plan
+#### Plan
 - nginx
 - several instances
 - security session
@@ -11,13 +11,13 @@
 - liquibase
 - split logging on host
 
-####Done
+#### Done
 
-###Steps
+### Steps
 1. sudo apt update
 1. sudo apt install docker.io
 
-###Notes
+### Notes
 Run redis image in docker: 
 `docker run --name somename -p 6379:6379 -d redis`
 
